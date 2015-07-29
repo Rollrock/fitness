@@ -11,23 +11,23 @@
 #import "StructInfo.h"
 #import "AppDelegate.h"
 #import "RFRateMe.h"
+#import "JSONKit.h"
+#import "WebViewController.h"
+#import "GifViewController.h"
 
 @import GoogleMobileAds;
 
-#define NOTI_SHOW_TIP  @"noti_show_tip"
-
-#define MAX_SNOOZE_COUNT   10
-#define FORCE_WAKEUP_ALARM_COUNT  30
 
 @interface FirstViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 {
-    NSMutableArray * alarmArray;
+    NSMutableArray * dataArray;
     
     AppDelegate * appDel;
     
     GADBannerView * _bannerView;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tabView;
+
 @end
 
 @implementation FirstViewController
@@ -43,21 +43,40 @@
     [self laytouADVView];
     //
     
-    self.title = @"必起闹钟";
-    
-    //
-    UIButton * rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 40)];
-    [rightBtn addTarget:self action:@selector(addAlarm) forControlEvents:UIControlEventTouchUpInside];
-    rightBtn.titleLabel.font = [UIFont systemFontOfSize:15];
-    [rightBtn setTitle:@"添加" forState:UIControlStateNormal];
-    [rightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    //[rightBtn setBackgroundImage:[UIImage imageNamed:@"add"] forState:UIControlStateNormal];
-    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    self.title = @"肌肉训练";
     
   
+    //
+    [self initData];
 }
 
+
+-(void)initData
+{
+    
+    dataArray = [NSMutableArray new];
+    
+    NSString * txtPath = [[NSBundle mainBundle] pathForResource:@"newslist" ofType:@"txt"];
+    NSString * strBody = [NSString stringWithContentsOfFile:txtPath encoding:NSUTF8StringEncoding error:nil];
+    
+    NSArray * array = [strBody objectFromJSONString];
+    
+    for( NSDictionary * dict in array )
+    {
+        if( [dict isKindOfClass:[NSDictionary class]] )
+        {
+            NSInfo * info = [NSInfo new];
+            
+            [info fromDict:dict];
+            
+            [dataArray addObject:info];
+        }
+    }
+    
+    
+    [self.tabView reloadData];
+    
+}
 
 //底部广告
 -(void)laytouADVView
@@ -87,7 +106,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 55;
+    return 80;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -102,20 +121,25 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [cell freshCell:[alarmArray objectAtIndex:indexPath.row]];
+    [cell freshCell:[dataArray objectAtIndex:indexPath.row]];
     
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [alarmArray count];
+    return [dataArray count];
 }
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+   // WebViewController * vc = [[WebViewController alloc]initWithNibName:@"WebViewController" bundle:nil];
+    
+    GifViewController * vc =  [[GifViewController alloc]initWithNibName:nil bundle:nil];
+    
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

@@ -14,6 +14,9 @@
 {
     AppDelegate * _appDel;
 }
+@property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLab;
+@property (weak, nonatomic) IBOutlet UILabel *descLab;
 
 @end
 
@@ -22,7 +25,7 @@
 - (void)awakeFromNib {
     // Initialization code
     
-
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -32,11 +35,13 @@
 }
 
 
--(void)freshCell:(AlarmInfo*)info
+-(void)freshCell:(NSInfo*)info
 {
-    _appDel = [[UIApplication sharedApplication] delegate];
     
-    //
+    _imgView.image = [UIImage imageNamed:info.imgName];
+    _titleLab.text = info.title;
+    _descLab.text = info.desc;
+    
 }
 
 

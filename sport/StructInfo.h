@@ -8,19 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+//news list
+@interface NSInfo : NSObject   //<NSCoding>
 
-@interface AlarmInfo : NSObject<NSCoding>
-@property(strong) NSNumber * snooze;
-@property(strong) NSNumber * on;
-@property(strong) NSNumber * hour;
-@property(strong) NSNumber * min;
-@property(strong) NSNumber * repeat;
-@property(strong) NSString * alarmName;
-@property(strong) NSString * soundName;
-@property(strong) NSString * alarmId;
-@property(strong) NSNumber * forceWakeUp;
+@property(strong) NSString * title;
+@property(strong) NSString * imgName;
+@property(strong) NSString * desc;
+@property(assign) NSInteger type;
+-(void)fromDict:(NSDictionary*)dict;
 
--(id)initWithCopy:(AlarmInfo*)info;
 @end
 
 

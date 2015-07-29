@@ -11,6 +11,6 @@
 
 @interface FirstTableViewCell : UITableViewCell
 
--(void)freshCell:(AlarmInfo*)info;
+-(void)freshCell:(NSInfo*)info;
 
 @end
