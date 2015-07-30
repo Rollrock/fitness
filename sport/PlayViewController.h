@@ -10,5 +10,6 @@
 
 @interface PlayViewController : UIViewController
 
-@property(strong) NSArray * imgArray;
+@property(strong) NSArray * dataArray;
+@property(assign) NSInteger curIndex;
 @end

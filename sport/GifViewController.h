@@ -10,4 +10,6 @@
 
 @interface GifViewController : UIViewController
 
+@property(strong) NSString * strUrl;
+
 @end

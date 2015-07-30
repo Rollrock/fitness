@@ -13,31 +13,16 @@
 #import <AVFoundation/AVFoundation.h>
 #import "StructInfo.h"
 #import "CommData.h"
+#import "FirstTableViewCell.h"
 
 @import GoogleMobileAds;
 
-@interface SecondViewController ()<UIPickerViewDataSource,UIPickerViewDelegate,AVAudioPlayerDelegate>
+@interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
-    
     GADBannerView * _bannerView;
-    
-    NSMutableArray * hourArray;
-    NSMutableArray * minArray;
-    NSMutableArray * toneArray;
-    
-    NSInteger seconds;
-    NSTimer * downTimer;
-    
-    AVAudioPlayer * audPlay;
-    
-    AVAudioSession * session;
-    
+      
 }
-@property (weak, nonatomic) IBOutlet UIPickerView *hourPicker;
-
-@property (weak, nonatomic) IBOutlet UIPickerView *minPicker;
-
-@property (weak, nonatomic) IBOutlet UILabel *startLab;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -47,20 +32,78 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.title = @"计时器";
+    //self.title = @"计时器";
     
     
     [self laytouADVView];
 }
 
+#pragma UITableView
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * cellId = @"FirstTableViewCell";
+    
+    FirstTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    
+    if( !cell )
+    {
+        cell = [[[NSBundle mainBundle] loadNibNamed:cellId owner:self options:nil]lastObject];
+    }
+    
+    return cell;
+}
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 3;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30.0f;
+}
+
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UILabel * lab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 30)];
+ 
+    if( section == 0)
+    {
+        lab.text = @"成功故事";
+    }
+    else if( section == 1 )
+    {
+        lab.text = @"减肥食物";
+    }
+    else if( section == 2 )
+    {
+        lab.text = @"减肥策略";
+    }
+    else
+    {
+        return nil;
+    }
+    
+    return lab;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
 
 
 //底部广告
@@ -70,6 +113,8 @@
     appDel = [[UIApplication sharedApplication] delegate];
    
     //
+    
+    return;
     
     CGRect rect = [[UIScreen mainScreen]bounds];
     CGPoint pt ;

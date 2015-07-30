@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view from its nib.
     
     
-    NSString *filePath = [[NSBundle mainBundle]pathForResource:@"index" ofType:@"html"];
+    NSString *filePath = [[NSBundle mainBundle]pathForResource:_strUrl ofType:@"html"];
     NSString *htmlString = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     [_webView loadHTMLString:htmlString baseURL:[NSURL URLWithString:filePath]];
 }

@@ -83,6 +83,8 @@
 {
     //
     
+    return;
+    
     CGRect rect = [[UIScreen mainScreen]bounds];
     CGPoint pt ;
     
@@ -134,12 +136,25 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   // WebViewController * vc = [[WebViewController alloc]initWithNibName:@"WebViewController" bundle:nil];
     
-    GifViewController * vc =  [[GifViewController alloc]initWithNibName:nil bundle:nil];
+    NSInfo* info = [dataArray objectAtIndex:indexPath.row];
+    
+    if( info.type == NS_TYPE_WEB)
+    {
+        WebViewController * vc = [[WebViewController alloc]initWithNibName:@"WebViewController" bundle:nil];
+        vc.strUrl = info.src;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    else if( info.type == NS_TYPE_GIF )
+    {
+        GifViewController * vc =  [[GifViewController alloc]initWithNibName:nil bundle:nil];
+        vc.strUrl = info.src;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+   //
     
     
-    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 

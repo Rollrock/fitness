@@ -197,6 +197,7 @@
 -(void)laytouADVView
 {
     
+    return;
     
     CGRect rect = [[UIScreen mainScreen]bounds];
     CGPoint pt ;

@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SecondViewController">
             <connections>
+                <outlet property="tableView" destination="lWa-kC-hnr" id="5R7-dW-wqc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +15,23 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="lWa-kC-hnr">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="J0k-rl-2uw"/>
+                        <outlet property="delegate" destination="-1" id="g7C-QC-0JP"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="lWa-kC-hnr" secondAttribute="bottom" id="2B5-nB-zWG"/>
+                <constraint firstItem="lWa-kC-hnr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3yb-H8-c2p"/>
+                <constraint firstAttribute="trailing" secondItem="lWa-kC-hnr" secondAttribute="trailing" id="Tg8-qq-2rN"/>
+                <constraint firstItem="lWa-kC-hnr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Y37-7N-WxI"/>
+            </constraints>
             <point key="canvasLocation" x="376" y="199"/>
         </view>
     </objects>

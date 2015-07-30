@@ -8,10 +8,20 @@
 
 #import "PlayViewController.h"
 #import "SvGifView.h"
+#import "UIImage+animatedGIF.h"
+#import "StructInfo.h"
+
 
 @interface PlayViewController ()
 {
-    SvGifView * gifView;
+    UIButton * leftBtn;
+    UIButton * rightBtn;
+    
+    UILabel * timeLab;
+    NSTimer * timer;
+    NSInteger timeCount;
+    
+    UIImageView * imgView;
 }
 @end
 
@@ -25,49 +35,100 @@
     
     
     UIView * navView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
+    navView.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:navView];
     
     UIButton * backBtn = [[UIButton alloc]initWithFrame:CGRectMake(10,20,25,25)];
     [backBtn addTarget:self action:@selector(backClicked) forControlEvents:UIControlEventTouchUpInside];
-    backBtn.backgroundColor = [UIColor lightGrayColor];
+    //backBtn.backgroundColor = [UIColor lightGrayColor];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"backArrow"] forState:UIControlStateNormal];
     [navView addSubview:backBtn];
 
     //
-    [self layoutGif:@"1_1"];
+    [self layoutGif:[_dataArray objectAtIndex:_curIndex]];
     //
 
     //
-    UIButton * leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(40, gifView.frame.origin.y + gifView.frame.size.height + 20, 25,25)];
+    leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(40, imgView.frame.origin.y + imgView.frame.size.height + 20, 30,30)];
     [leftBtn addTarget:self action:@selector(leftClicked) forControlEvents:UIControlEventTouchUpInside];
-    leftBtn.backgroundColor = [UIColor lightGrayColor];
+    [leftBtn setBackgroundImage:[UIImage imageNamed:@"leftArrow"] forState:UIControlStateNormal];
     [self.view addSubview:leftBtn];
     
-    UIButton * rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 40 - 25, gifView.frame.origin.y + gifView.frame.size.height + 20, 25,25)];
+    rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 40 - 25, imgView.frame.origin.y + imgView.frame.size.height + 20, 25,25)];
     [rightBtn addTarget:self action:@selector(rightClicked) forControlEvents:UIControlEventTouchUpInside];
-    rightBtn.backgroundColor = [UIColor lightGrayColor];
+    [rightBtn setBackgroundImage:[UIImage imageNamed:@"rightArrow"] forState:UIControlStateNormal];
     [self.view addSubview:rightBtn];
+    
+    //
+    timeLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
+    timeLab.center = CGPointMake(self.view.center.x, rightBtn.frame.origin.y + 50);
+    timeLab.text = @"60";
+    timeLab.font = [UIFont systemFontOfSize:55];
+    timeLab.textColor = [UIColor brownColor];
+    [self.view addSubview:timeLab];
 }
 
 -(void)play
 {
-    [gifView startGif];
+    //
+    timeCount = 60;
+    [timer invalidate];
+    timer = nil;
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(downCount) userInfo:nil repeats:YES];
 }
 
-
-
--(void)layoutGif:(NSString*)imgName
+-(void)resetTimeLab
 {
-    [gifView removeFromSuperview];
-    gifView = nil;
+    [timer invalidate];
+    timer = nil;
+    
+    timeCount = 60;
+    
+    timeLab.text = [NSString stringWithFormat:@"%d",timeCount];
+}
+
+-(void)downCount
+{
+    -- timeCount;
+    
+    timeLab.text = [NSString stringWithFormat:@"%d",timeCount];
+    
+    if( timeCount <= 0 )
+    {
+        [timer invalidate];
+        timer  = nil;
+    }
+}
+
+-(void)layoutGif:(GifInfo*)gifInfo
+{
+    UILabel * titleLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 70, self.view.frame.size.width-10*2, 30)];
+    titleLab.text = gifInfo.title;
+    titleLab.font = [UIFont systemFontOfSize:20];
+    titleLab.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:titleLab];
+
     
     //
-    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:imgName withExtension:@"gif"];
-    gifView = [[SvGifView alloc] initWithCenter:CGPointMake(self.view.bounds.size.width / 2, 130) fileURL:fileUrl];
-    gifView.backgroundColor = [UIColor clearColor];
-    gifView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-    [self.view addSubview:gifView];
+    CGRect frame = CGRectMake(0, 0, 0, 0);
+    frame.size = [UIImage imageNamed:[NSString stringWithFormat:@"%@.gif",gifInfo.imgName]].size;
     
-    [NSTimer scheduledTimerWithTimeInterval:0.3 target:self selector:@selector(play) userInfo:nil repeats:NO];
+    NSLog(@"frame:%f-%f",frame.size.width,frame.size.height);
+    
+    [imgView removeFromSuperview];
+    imgView = nil;
+    
+    
+    imgView = [[UIImageView alloc]initWithFrame:frame];
+    imgView.center = CGPointMake(self.view.center.x,frame.size.height+50);
+    [self.view addSubview:imgView];
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:gifInfo.imgName withExtension:@"gif"];
+    imgView.image = [UIImage animatedImageWithAnimatedGIFData:[NSData dataWithContentsOfURL:url]];
+
+    
+    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(play) userInfo:nil repeats:NO];
 }
 
 
@@ -82,15 +143,38 @@
 {
     NSLog(@"leftClicked");
     
-    [self layoutGif:@"1_2"];
+    _curIndex = (_curIndex <= 0 ? 0:(_curIndex-1));
+    if( _curIndex == 0 )
+    {
+        leftBtn.enabled = NO;
+    }
+    rightBtn.enabled = YES;
+    
+    [self resetTimeLab];
+    
+    GifInfo * info= [_dataArray objectAtIndex:_curIndex];
+    
+    [self layoutGif:info];
 }
 
 -(void)rightClicked
 {
     NSLog(@"rightClicked");
     
-    [self layoutGif:@"1_3"];
-
+    _curIndex = (_curIndex >= ([_dataArray count]-1) ? ([_dataArray count]-1):(_curIndex+1));
+    
+    if( _curIndex == [_dataArray count] -1 )
+    {
+        rightBtn.enabled = NO;
+    }
+    
+    leftBtn.enabled = YES;
+    
+    [self resetTimeLab];
+    
+    GifInfo * info = [_dataArray objectAtIndex:_curIndex];
+    
+    [self layoutGif:info];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -98,14 +182,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
