@@ -7,7 +7,6 @@
 //
 
 #import "GifViewController.h"
-#import "SvGifView.h"
 #import "CommData.h"
 #import "PlayViewController.h"
 #import "JSONKit.h"

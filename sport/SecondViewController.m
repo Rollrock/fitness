@@ -14,13 +14,18 @@
 #import "StructInfo.h"
 #import "CommData.h"
 #import "FirstTableViewCell.h"
+#import "JSONKit.h"
+#import "WebViewController.h"
 
 @import GoogleMobileAds;
 
 @interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     GADBannerView * _bannerView;
-      
+    
+    NSMutableArray * gushiArray;
+    NSMutableArray * shiwuArray;
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -28,12 +33,62 @@
 
 @implementation SecondViewController
 
+
+
+-(void)initData
+{
+    {
+        gushiArray = [NSMutableArray new];
+        
+        NSString * txtPath = [[NSBundle mainBundle] pathForResource:@"gushi" ofType:@"txt"];
+        NSString * strBody = [NSString stringWithContentsOfFile:txtPath encoding:NSUTF8StringEncoding error:nil];
+        
+        NSArray * array = [strBody objectFromJSONString];
+        
+        for( NSDictionary * dict in array )
+        {
+            if( [dict isKindOfClass:[NSDictionary class]] )
+            {
+                NSInfo * info = [NSInfo new];
+                
+                [info fromDict:dict];
+                
+                [gushiArray addObject:info];
+            }
+        }
+    }
+    
+    {
+        shiwuArray = [NSMutableArray new];
+        
+        NSString * txtPath = [[NSBundle mainBundle] pathForResource:@"shiwu" ofType:@"txt"];
+        NSString * strBody = [NSString stringWithContentsOfFile:txtPath encoding:NSUTF8StringEncoding error:nil];
+        
+        NSArray * array = [strBody objectFromJSONString];
+        
+        for( NSDictionary * dict in array )
+        {
+            if( [dict isKindOfClass:[NSDictionary class]] )
+            {
+                NSInfo * info = [NSInfo new];
+                
+                [info fromDict:dict];
+                
+                [shiwuArray addObject:info];
+            }
+        }
+    }
+    
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //self.title = @"计时器";
+    self.title = @"减肥事项";
     
+    [self initData];
     
     [self laytouADVView];
 }
@@ -51,13 +106,65 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:cellId owner:self options:nil]lastObject];
     }
     
+    if( indexPath.section == 0 )
+    {
+        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell freshCell:[gushiArray objectAtIndex:indexPath.row]];
+        
+    }
+    else if(indexPath.section == 1 )
+    {
+        [cell freshCell:[shiwuArray objectAtIndex:indexPath.row]];
+    }
+    
     return cell;
 }
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    if(  section == 0 )
+    {
+        return [gushiArray count];
+    }
+    else if( section == 1 )
+    {
+        return [shiwuArray count];
+    }
+    
+    return 0;
+
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    WebViewController * vc = [[WebViewController alloc]initWithNibName:@"WebViewController" bundle:nil];
+    
+    switch (indexPath.section) {
+        case 0:
+        {
+            vc.strUrl =((NSInfo*) [gushiArray objectAtIndex:indexPath.row]).src;
+        }
+            break;
+            
+            case 1:
+        {
+            vc.strUrl =((NSInfo*) [shiwuArray objectAtIndex:indexPath.row]).src;
+        }
+            break;
+            
+        case 2:
+        {
+            vc.strUrl =((NSInfo*) [gushiArray objectAtIndex:indexPath.row]).src;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,7 +175,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -113,8 +220,6 @@
     appDel = [[UIApplication sharedApplication] delegate];
    
     //
-    
-    return;
     
     CGRect rect = [[UIScreen mainScreen]bounds];
     CGPoint pt ;

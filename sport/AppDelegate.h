@@ -16,6 +16,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+-(void) shareWithTextUrl;
+-(BOOL)isWeChatValid;
 
 @end
 

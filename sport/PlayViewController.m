@@ -7,7 +7,6 @@
 //
 
 #import "PlayViewController.h"
-#import "SvGifView.h"
 #import "UIImage+animatedGIF.h"
 #import "StructInfo.h"
 
@@ -21,6 +20,7 @@
     NSTimer * timer;
     NSInteger timeCount;
     
+    UILabel * titleLab;
     UIImageView * imgView;
 }
 @end
@@ -33,9 +33,8 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
     UIView * navView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60)];
-    navView.backgroundColor = [UIColor lightGrayColor];
+    navView.backgroundColor = [UIColor colorWithRed:246.0/255 green:246.0/255 blue:246.0/255 alpha:1];
     [self.view addSubview:navView];
     
     UIButton * backBtn = [[UIButton alloc]initWithFrame:CGRectMake(10,20,25,25)];
@@ -49,12 +48,12 @@
     //
 
     //
-    leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(40, imgView.frame.origin.y + imgView.frame.size.height + 20, 30,30)];
+    leftBtn = [[UIButton alloc]initWithFrame:CGRectMake(40, imgView.frame.origin.y + imgView.frame.size.height + 20, 40,40)];
     [leftBtn addTarget:self action:@selector(leftClicked) forControlEvents:UIControlEventTouchUpInside];
     [leftBtn setBackgroundImage:[UIImage imageNamed:@"leftArrow"] forState:UIControlStateNormal];
     [self.view addSubview:leftBtn];
     
-    rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 40 - 25, imgView.frame.origin.y + imgView.frame.size.height + 20, 25,25)];
+    rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.frame.size.width - 40 - 40, imgView.frame.origin.y + imgView.frame.size.height + 20, 40,40)];
     [rightBtn addTarget:self action:@selector(rightClicked) forControlEvents:UIControlEventTouchUpInside];
     [rightBtn setBackgroundImage:[UIImage imageNamed:@"rightArrow"] forState:UIControlStateNormal];
     [self.view addSubview:rightBtn];
@@ -103,12 +102,15 @@
 
 -(void)layoutGif:(GifInfo*)gifInfo
 {
-    UILabel * titleLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 70, self.view.frame.size.width-10*2, 30)];
+    if( !titleLab )
+    {
+        titleLab = [[UILabel alloc]initWithFrame:CGRectMake(10, 70, self.view.frame.size.width-10*2, 30)];
+        titleLab.font = [UIFont systemFontOfSize:20];
+        titleLab.textAlignment = NSTextAlignmentCenter;
+        [self.view addSubview:titleLab];
+    }
+    
     titleLab.text = gifInfo.title;
-    titleLab.font = [UIFont systemFontOfSize:20];
-    titleLab.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:titleLab];
-
     
     //
     CGRect frame = CGRectMake(0, 0, 0, 0);

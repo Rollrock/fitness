@@ -10,8 +10,8 @@
 #import "UIAlertView+NSCookbook.h"
 
 #define kNumberOfDaysUntilShowAgain 3
-#define kAppStoreAddress @"https://itunes.apple.com/us/app/bi-qi-nao-zhong-bu-qi-chuang/id1009624896?l=zh&ls=1&mt=8"
-#define kAppName @"'必起闹钟'"
+#define kAppStoreAddress @"https://itunes.apple.com/us/app/30tian-jian-fei-bu-fan-dan/id1024533470?l=zh&ls=1&mt=8"
+#define kAppName @"'21天减肥不反弹'"
 
 @implementation RFRateMe
 

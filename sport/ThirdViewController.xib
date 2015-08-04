@@ -9,6 +9,9 @@
             <connections>
                 <outlet property="app1Btn" destination="iEf-OY-l0g" id="dX1-QY-ItS"/>
                 <outlet property="app2Btn" destination="VHA-ok-Wda" id="c1e-Ov-OS8"/>
+                <outlet property="app3Btn" destination="Zyg-an-DML" id="nQF-rq-Q0d"/>
+                <outlet property="app4Btn" destination="soU-AN-k5g" id="aUB-gN-sYg"/>
+                <outlet property="app5Btn" destination="anS-Ng-UjC" id="qeG-oQ-i4R"/>
                 <outlet property="bgView1" destination="QrV-9L-lqd" id="oeh-co-l09"/>
                 <outlet property="bgView2" destination="KkC-jg-yoD" id="XjB-vk-qMp"/>
                 <outlet property="buyBtn" destination="QXC-Tf-Av6" id="g5T-OZ-XRi"/>
@@ -23,13 +26,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrV-9L-lqd">
-                    <rect key="frame" x="10" y="80" width="580" height="125"/>
+                    <rect key="frame" x="10" y="80" width="580" height="55"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXC-Tf-Av6">
-                            <rect key="frame" x="10" y="45" width="560" height="35"/>
+                            <rect key="frame" x="10" y="45" width="560" height="0.0"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="35" id="1gD-A6-glm"/>
+                                <constraint firstAttribute="height" id="1gD-A6-glm"/>
                             </constraints>
                             <state key="normal" title="付费永久去掉广告(12元)">
                                 <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,10 +57,10 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWv-HI-1Li">
-                            <rect key="frame" x="10" y="85" width="560" height="35"/>
+                            <rect key="frame" x="10" y="50" width="560" height="0.0"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="35" id="IKD-EN-4BQ"/>
+                                <constraint firstAttribute="height" id="IKD-EN-4BQ"/>
                             </constraints>
                             <state key="normal" title="恢复购买">
                                 <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,7 +93,7 @@
                     </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkC-jg-yoD">
-                    <rect key="frame" x="10" y="215" width="580" height="125"/>
+                    <rect key="frame" x="10" y="145" width="580" height="205"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-an-DML">
                             <rect key="frame" x="10" y="85" width="560" height="35"/>
@@ -134,19 +137,68 @@
                                 <action selector="app1Clicked" destination="-1" eventType="touchUpInside" id="PKh-Vh-0co"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soU-AN-k5g">
+                            <rect key="frame" x="10" y="125" width="560" height="35"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="bf1-kK-m2w"/>
+                            </constraints>
+                            <state key="normal" title="必起闹钟-你不起床就不会停的闹钟">
+                                <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="app4Clicked" destination="-1" eventType="touchUpInside" id="8Kn-GB-Kh4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIv-gf-QI4">
+                            <rect key="frame" x="-10" y="-215" width="231" height="35"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="Tfq-4I-OsP"/>
+                            </constraints>
+                            <state key="normal" title="必起闹钟-你不起床就不会停的闹钟">
+                                <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="app3Clicked" destination="-1" eventType="touchUpInside" id="PPc-UL-byG"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anS-Ng-UjC">
+                            <rect key="frame" x="10" y="165" width="560" height="35"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="dvU-I9-JXj"/>
+                            </constraints>
+                            <state key="normal" title="XY苹果手机助手—手机加速专家">
+                                <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="app5Clicked" destination="-1" eventType="touchUpInside" id="FBN-1d-IGh"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="VHA-ok-Wda" secondAttribute="bottom" constant="5" id="6vu-mP-Jql"/>
+                        <constraint firstItem="soU-AN-k5g" firstAttribute="top" secondItem="Zyg-an-DML" secondAttribute="bottom" constant="5" id="8x7-Oy-zQX"/>
                         <constraint firstItem="iEf-OY-l0g" firstAttribute="top" secondItem="KkC-jg-yoD" secondAttribute="top" constant="5" id="DFJ-2Y-0aW"/>
+                        <constraint firstAttribute="trailing" secondItem="soU-AN-k5g" secondAttribute="trailing" constant="10" id="HJP-R9-TDU"/>
+                        <constraint firstItem="anS-Ng-UjC" firstAttribute="leading" secondItem="KkC-jg-yoD" secondAttribute="leading" constant="10" id="K2p-AQ-V3q"/>
                         <constraint firstAttribute="trailing" secondItem="iEf-OY-l0g" secondAttribute="trailing" constant="10" id="Lek-ah-wOm"/>
                         <constraint firstItem="VHA-ok-Wda" firstAttribute="top" secondItem="iEf-OY-l0g" secondAttribute="bottom" constant="5" id="OVa-Ss-SUW"/>
                         <constraint firstAttribute="trailing" secondItem="Zyg-an-DML" secondAttribute="trailing" constant="10" id="Vv2-Ax-MbL"/>
+                        <constraint firstAttribute="bottom" secondItem="anS-Ng-UjC" secondAttribute="bottom" constant="5" id="WcP-UR-leL"/>
                         <constraint firstAttribute="height" constant="100" id="YNa-AH-hG2"/>
                         <constraint firstAttribute="bottom" secondItem="Zyg-an-DML" secondAttribute="bottom" constant="5" id="d4j-K1-bwO"/>
                         <constraint firstItem="VHA-ok-Wda" firstAttribute="leading" secondItem="KkC-jg-yoD" secondAttribute="leading" constant="10" id="fzH-fx-No3"/>
+                        <constraint firstAttribute="trailing" secondItem="anS-Ng-UjC" secondAttribute="trailing" constant="10" id="hUV-bN-2C2"/>
+                        <constraint firstItem="soU-AN-k5g" firstAttribute="leading" secondItem="KkC-jg-yoD" secondAttribute="leading" constant="10" id="hsR-8P-mhy"/>
                         <constraint firstItem="iEf-OY-l0g" firstAttribute="leading" secondItem="KkC-jg-yoD" secondAttribute="leading" constant="10" id="k7C-Ox-SAF"/>
                         <constraint firstAttribute="trailing" secondItem="VHA-ok-Wda" secondAttribute="trailing" constant="10" id="q19-Od-sw3"/>
+                        <constraint firstItem="anS-Ng-UjC" firstAttribute="top" secondItem="soU-AN-k5g" secondAttribute="bottom" constant="5" id="rdI-9P-iM2"/>
                         <constraint firstItem="Zyg-an-DML" firstAttribute="leading" secondItem="KkC-jg-yoD" secondAttribute="leading" constant="10" id="vWa-4M-yo1"/>
                         <constraint firstItem="Zyg-an-DML" firstAttribute="top" secondItem="VHA-ok-Wda" secondAttribute="bottom" constant="5" id="yK4-uZ-dmA"/>
                     </constraints>
@@ -154,32 +206,21 @@
                         <mask key="constraints">
                             <exclude reference="YNa-AH-hG2"/>
                             <exclude reference="6vu-mP-Jql"/>
+                            <exclude reference="d4j-K1-bwO"/>
                         </mask>
                     </variation>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QQ群:170207054" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l81-3q-aY8">
-                    <rect key="frame" x="10" y="474" width="580" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="rVr-V2-1eo"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="l81-3q-aY8" secondAttribute="trailing" constant="10" id="84C-NO-ZLo"/>
                 <constraint firstItem="QrV-9L-lqd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="JeC-Bg-T6h"/>
-                <constraint firstItem="l81-3q-aY8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="O4z-du-tsN"/>
-                <constraint firstAttribute="bottom" secondItem="l81-3q-aY8" secondAttribute="bottom" constant="105" id="aGh-SO-yhO"/>
                 <constraint firstItem="KkC-jg-yoD" firstAttribute="top" secondItem="QrV-9L-lqd" secondAttribute="bottom" constant="10" id="cpm-T2-iYd"/>
                 <constraint firstAttribute="trailing" secondItem="KkC-jg-yoD" secondAttribute="trailing" constant="10" id="q73-o5-Mol"/>
                 <constraint firstItem="KkC-jg-yoD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="uU9-xx-xlW"/>
                 <constraint firstItem="QrV-9L-lqd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="yLm-ny-NRi"/>
                 <constraint firstAttribute="trailing" secondItem="QrV-9L-lqd" secondAttribute="trailing" constant="10" id="zpA-At-VhM"/>
             </constraints>
-            <point key="canvasLocation" x="-63" y="29"/>
+            <point key="canvasLocation" x="-342" y="8"/>
         </view>
     </objects>
 </document>

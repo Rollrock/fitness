@@ -35,10 +35,17 @@
 @property (weak, nonatomic) IBOutlet UIButton *restoreBtn;
 @property (weak, nonatomic) IBOutlet UIButton *app1Btn;
 @property (weak, nonatomic) IBOutlet UIButton *app2Btn;
+@property (weak, nonatomic) IBOutlet UIButton *app3Btn;
+@property (weak, nonatomic) IBOutlet UIButton *app4Btn;
+@property (weak, nonatomic) IBOutlet UIButton *app5Btn;
+
+
 - (IBAction)app1Clicked;
 - (IBAction)app2Clicked;
 - (IBAction)shareClicked;
 - (IBAction)app3Clicked;
+- (IBAction)app4Clicked;
+- (IBAction)app5Clicked;
 
 
 @end
@@ -105,6 +112,15 @@
     _app2Btn.layer.cornerRadius = 3;
     _app2Btn.layer.masksToBounds = YES;
     
+    _app3Btn.layer.cornerRadius = 3;
+    _app3Btn.layer.masksToBounds = YES;
+    
+    _app4Btn.layer.cornerRadius = 3;
+    _app4Btn.layer.masksToBounds = YES;
+    
+    _app5Btn.layer.cornerRadius = 3;
+    _app5Btn.layer.masksToBounds = YES;
+    
     //
     
     if( ![self showMe] )
@@ -113,6 +129,13 @@
     }
     
     //
+    
+    //
+    if( !appDel.isWeChatValid )
+    {
+        _shareBtn.enabled = NO;
+    }
+    
        //
     [self laytouADVView];
 }
@@ -165,6 +188,7 @@
 
 - (IBAction)shareClicked
 {
+    [appDel shareWithTextUrl];
     
     [MobClick event:@"shareClicked"];
 }
@@ -174,6 +198,20 @@
     
     
     [MobClick event:@"app3Clicked"];
+}
+
+- (IBAction)app4Clicked
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/bi-qi-nao-zhong-bu-qi-chuang/id1009624896?mt=8"]];
+    
+    [MobClick event:@"app4Clicked"];
+}
+
+- (IBAction)app5Clicked
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/xy-shou-ji-zhu-shou-xing-neng/id1020595864?l=zh&ls=1&mt=8"]];
+    
+    [MobClick event:@"app5Clicked"];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -196,9 +234,6 @@
 //底部广告
 -(void)laytouADVView
 {
-    
-    return;
-    
     CGRect rect = [[UIScreen mainScreen]bounds];
     CGPoint pt ;
     
