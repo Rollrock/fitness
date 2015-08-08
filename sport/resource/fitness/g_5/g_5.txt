@@ -1,30 +1,30 @@
 ﻿[
     {
         "title": "平板支撑+左右转髋",
-        "imgName": "g_7_1"
+        "imgName": "g_5_1"
     },
     {
         "title": "平板支撑+重心前后移动",
-        "imgName": "g_7_2"
+        "imgName": "g_5_2"
     },
     {
         "title": "侧身支撑+挺髋",
-        "imgName": "g_7_3"
+        "imgName": "g_5_3"
     },
     {
         "title": "直臂平板支撑开合跳",
-        "imgName": "g_7_4"
+        "imgName": "g_5_4"
     },
     {
         "title": "直臂平板支撑+交替体膝",
-        "imgName": "g_7_5"
+        "imgName": "g_5_5"
     },
     {
         "title": "直臂平板支撑+收腿跳",
-        "imgName": "g_7_6"
+        "imgName": "g_5_6"
     },
     {
         "title": "直臂平板支撑+收腿跳",
-        "imgName": "g_7_7"
+        "imgName": "g_5_7"
     }
 ]

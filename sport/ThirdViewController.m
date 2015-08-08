@@ -12,14 +12,16 @@
 #import "AppDelegate.h"
 #import "MobClick.h"
 #import "IAPShare.h"
+#import "PayMent.h"
+
+#define BUY_STORE   @"buy_store"
 
 @import GoogleMobileAds;
 
-@interface ThirdViewController ()<GADBannerViewDelegate>
+@interface ThirdViewController ()<GADBannerViewDelegate,PayMentDelegate>
 {
-    
     AppDelegate * appDel;
-    
+    PayMent * payMent;
     
     GADBannerView * _bannerView;
 
@@ -88,7 +90,6 @@
     //
     self.title = @"设置";
     
-    
     //
     _bgView1.layer.cornerRadius = 4;
     _bgView1.layer.masksToBounds = YES;
@@ -138,6 +139,11 @@
     
        //
     [self laytouADVView];
+    
+    //
+    payMent = [PayMent new];
+    payMent.PayDelegate = self;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -145,32 +151,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma PayMentDelegate
--(NSString*)getProdId
-{
-    return @"alarm_dis_div";
-}
-
--(void)buySuccess:(NSDate*)date
-{
-}
-
--(void)buyFailed
-{
-    
-}
-
-////////////////////////////////////////////////
-- (IBAction)buyClicked
-{
-    
-    [MobClick event:@"buyClicked"];
-    
-}
-
-- (IBAction)restoreBuy
-{
- }
 
 - (IBAction)app1Clicked
 {
@@ -214,6 +194,7 @@
     [MobClick event:@"app5Clicked"];
 }
 
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -251,6 +232,46 @@
     
     [self.view addSubview:_bannerView];
 }
+
+
+#pragma PayMentDelegate
+-(NSString*)getProdId
+{
+    return @"more_video";
+}
+
+-(void)buySuccess:(NSDate*)date
+{
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    [def setBool:YES forKey:BUY_STORE];
+    [def synchronize];
+}
+
+-(BOOL)buyed
+{
+    BOOL bFlag = NO;
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    bFlag = [def boolForKey:BUY_STORE];
+    
+    return bFlag;
+}
+
+-(void)buyFailed
+{
+    
+}
+
+////////////////////////////////////////////////
+- (void)buyClicked
+{
+    [payMent startBuy];
+}
+
+- (void)restoreBuy
+{
+    [payMent restoreBuy];
+}
+
 
 
 @end

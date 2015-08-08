@@ -80,7 +80,7 @@
     
     [WXApi registerApp:@"wx56599a0020b5efcd"];
     
-    [RFRateMe showRateAlertAfterTimesOpened:5];
+    [RFRateMe showRateAlertAfterTimesOpened:3];
 
     //
     {
@@ -192,7 +192,7 @@
     [message setThumbImage:[UIImage imageNamed:@"res2.png"]];
     
     WXWebpageObject *ext = [WXWebpageObject object];
-    ext.webpageUrl = @"https://itunes.apple.com/us/app/30tian-jian-fei-bu-fan-dan/id1024533470?l=zh&ls=1&mt=8";
+    ext.webpageUrl = @"https://itunes.apple.com/us/app/21tian-jian-fei-bu-fan-dan/id1024533470?l=zh&ls=1&mt=8";
     
     message.mediaObject = ext;
     

@@ -14,17 +14,22 @@
 #import "JSONKit.h"
 #import "WebViewController.h"
 #import "GifViewController.h"
+#import "PayMent.h"
 
 @import GoogleMobileAds;
 
 
-@interface FirstViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
+#define BUY_STORE   @"buy_store"
+
+@interface FirstViewController ()<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate,PayMentDelegate,UIAlertViewDelegate>
 {
     NSMutableArray * dataArray;
     
     AppDelegate * appDel;
     
     GADBannerView * _bannerView;
+    
+    PayMent * payMent;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tabView;
 
@@ -32,22 +37,64 @@
 
 @implementation FirstViewController
 
+
+#pragma PayMentDelegate
+-(NSString*)getProdId
+{
+    return @"more_video";
+}
+
+-(void)buySuccess:(NSDate*)date
+{
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    [def setBool:YES forKey:BUY_STORE];
+    [def synchronize];
+}
+
+-(BOOL)buyed
+{
+    BOOL bFlag = NO;
+    NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
+    bFlag = [def boolForKey:BUY_STORE];
+    
+    return bFlag;
+}
+
+-(void)buyFailed
+{
+    
+}
+
+////////////////////////////////////////////////
+- (void)buyClicked
+{
+    [payMent startBuy];
+}
+
+- (void)restoreBuy
+{
+    [payMent restoreBuy];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
     
     appDel = [[UIApplication sharedApplication] delegate];
     
     //
     [self laytouADVView];
     //
-    
     self.title = @"肌肉训练";
     
-  
     //
     [self initData];
+    
+    //
+    payMent = [PayMent new];
+    payMent.PayDelegate = self;
+
 }
 
 
@@ -145,18 +192,40 @@
     }
     else if( info.type == NS_TYPE_GIF )
     {
-        GifViewController * vc =  [[GifViewController alloc]initWithNibName:nil bundle:nil];
-        vc.strUrl = info.src;
-        [self.navigationController pushViewController:vc animated:YES];
+        if( [self buyed] )
+        {
+            GifViewController * vc =  [[GifViewController alloc]initWithNibName:nil bundle:nil];
+            vc.strUrl = info.src;
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        else
+        {
+            if( indexPath.row >= 1 )
+            {
+                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"需要购买才能观看更多健身动画(18元)" delegate:self cancelButtonTitle:@"好的" otherButtonTitles:@"不了", nil];
+                
+                [alert show];
+            }
+            else
+            {
+                GifViewController * vc =  [[GifViewController alloc]initWithNibName:nil bundle:nil];
+                vc.strUrl = info.src;
+                [self.navigationController pushViewController:vc animated:YES];
+                
+            }
+        }
     }
    //
-    
-    
-    
 }
 
 
-
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if( buttonIndex == 0 )
+    {
+        [self buyClicked];
+    }
+}
 
 
 @end

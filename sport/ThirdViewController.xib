@@ -25,75 +25,8 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrV-9L-lqd">
-                    <rect key="frame" x="10" y="80" width="580" height="55"/>
-                    <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXC-Tf-Av6">
-                            <rect key="frame" x="10" y="45" width="560" height="0.0"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" id="1gD-A6-glm"/>
-                            </constraints>
-                            <state key="normal" title="付费永久去掉广告(12元)">
-                                <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="buyClicked" destination="-1" eventType="touchUpInside" id="S9m-XO-YRO"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooE-w1-ick">
-                            <rect key="frame" x="10" y="5" width="560" height="35"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="BgR-b0-wX2"/>
-                            </constraints>
-                            <state key="normal" title="分享我们去掉广告一周">
-                                <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="shareClicked" destination="-1" eventType="touchUpInside" id="QeI-jD-WD4"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWv-HI-1Li">
-                            <rect key="frame" x="10" y="50" width="560" height="0.0"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" id="IKD-EN-4BQ"/>
-                            </constraints>
-                            <state key="normal" title="恢复购买">
-                                <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="restoreBuy" destination="-1" eventType="touchUpInside" id="Mgs-iY-sUu"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstItem="fWv-HI-1Li" firstAttribute="top" secondItem="QXC-Tf-Av6" secondAttribute="bottom" constant="8" id="6K6-2R-xS4"/>
-                        <constraint firstAttribute="trailing" secondItem="fWv-HI-1Li" secondAttribute="trailing" constant="10" id="7ou-e4-sTc"/>
-                        <constraint firstItem="ooE-w1-ick" firstAttribute="top" secondItem="QrV-9L-lqd" secondAttribute="top" constant="5" id="9JC-P4-OMq"/>
-                        <constraint firstAttribute="height" constant="120" id="Enk-ik-iuQ"/>
-                        <constraint firstAttribute="bottom" secondItem="fWv-HI-1Li" secondAttribute="bottom" constant="5" id="Le7-xj-x64"/>
-                        <constraint firstItem="QXC-Tf-Av6" firstAttribute="top" secondItem="ooE-w1-ick" secondAttribute="bottom" constant="5" id="PSb-yG-zrI"/>
-                        <constraint firstItem="ooE-w1-ick" firstAttribute="leading" secondItem="QrV-9L-lqd" secondAttribute="leading" constant="10" id="PkJ-46-ahv"/>
-                        <constraint firstAttribute="trailing" secondItem="QXC-Tf-Av6" secondAttribute="trailing" constant="10" id="YiM-dG-dnc"/>
-                        <constraint firstItem="QXC-Tf-Av6" firstAttribute="leading" secondItem="QrV-9L-lqd" secondAttribute="leading" constant="10" id="klJ-AC-arl"/>
-                        <constraint firstItem="fWv-HI-1Li" firstAttribute="top" secondItem="QXC-Tf-Av6" secondAttribute="bottom" constant="5" id="u5M-lG-mdA"/>
-                        <constraint firstItem="fWv-HI-1Li" firstAttribute="leading" secondItem="QrV-9L-lqd" secondAttribute="leading" constant="10" id="xk9-92-kaH"/>
-                        <constraint firstAttribute="trailing" secondItem="ooE-w1-ick" secondAttribute="trailing" constant="10" id="yUU-Js-1dg"/>
-                    </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="Enk-ik-iuQ"/>
-                        </mask>
-                    </variation>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkC-jg-yoD">
-                    <rect key="frame" x="10" y="145" width="580" height="205"/>
+                    <rect key="frame" x="10" y="180" width="580" height="205"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-an-DML">
                             <rect key="frame" x="10" y="85" width="560" height="35"/>
@@ -151,8 +84,8 @@
                                 <action selector="app4Clicked" destination="-1" eventType="touchUpInside" id="8Kn-GB-Kh4"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIv-gf-QI4">
-                            <rect key="frame" x="-10" y="-215" width="231" height="35"/>
+                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIv-gf-QI4">
+                            <rect key="frame" x="-10" y="-180" width="231" height="35"/>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="Tfq-4I-OsP"/>
@@ -207,6 +140,90 @@
                             <exclude reference="YNa-AH-hG2"/>
                             <exclude reference="6vu-mP-Jql"/>
                             <exclude reference="d4j-K1-bwO"/>
+                        </mask>
+                    </variation>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrV-9L-lqd">
+                    <rect key="frame" x="10" y="80" width="580" height="90"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QXC-Tf-Av6">
+                            <rect key="frame" x="10" y="80" width="560" height="0.0"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="1gD-A6-glm"/>
+                            </constraints>
+                            <state key="normal" title="付费永久去掉广告(12元)">
+                                <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="buyClicked" destination="-1" eventType="touchUpInside" id="S9m-XO-YRO"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooE-w1-ick">
+                            <rect key="frame" x="10" y="5" width="560" height="35"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="BgR-b0-wX2"/>
+                            </constraints>
+                            <state key="normal" title="分享我们去掉广告一周">
+                                <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="shareClicked" destination="-1" eventType="touchUpInside" id="QeI-jD-WD4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWv-HI-1Li">
+                            <rect key="frame" x="10" y="85" width="560" height="0.0"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="IKD-EN-4BQ"/>
+                            </constraints>
+                            <state key="normal" title="恢复购买">
+                                <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="restoreBuy" destination="-1" eventType="touchUpInside" id="Mgs-iY-sUu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PN3-Ua-OxN">
+                            <rect key="frame" x="10" y="45" width="560" height="35"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="rKr-TR-0rf"/>
+                            </constraints>
+                            <state key="normal" title="恢复购买">
+                                <color key="titleColor" red="0.31372549020000001" green="0.31372549020000001" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="restoreBuy" destination="-1" eventType="touchUpInside" id="dhI-6v-HvA"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="PN3-Ua-OxN" firstAttribute="leading" secondItem="QrV-9L-lqd" secondAttribute="leading" constant="10" id="3aR-1X-AFl"/>
+                        <constraint firstItem="fWv-HI-1Li" firstAttribute="top" secondItem="QXC-Tf-Av6" secondAttribute="bottom" constant="8" id="6K6-2R-xS4"/>
+                        <constraint firstAttribute="trailing" secondItem="fWv-HI-1Li" secondAttribute="trailing" constant="10" id="7ou-e4-sTc"/>
+                        <constraint firstItem="ooE-w1-ick" firstAttribute="top" secondItem="QrV-9L-lqd" secondAttribute="top" constant="5" id="9JC-P4-OMq"/>
+                        <constraint firstAttribute="height" constant="120" id="Enk-ik-iuQ"/>
+                        <constraint firstAttribute="bottom" secondItem="fWv-HI-1Li" secondAttribute="bottom" constant="5" id="Le7-xj-x64"/>
+                        <constraint firstItem="ooE-w1-ick" firstAttribute="leading" secondItem="QrV-9L-lqd" secondAttribute="leading" constant="10" id="PkJ-46-ahv"/>
+                        <constraint firstAttribute="trailing" secondItem="QXC-Tf-Av6" secondAttribute="trailing" constant="10" id="YiM-dG-dnc"/>
+                        <constraint firstItem="PN3-Ua-OxN" firstAttribute="top" secondItem="ooE-w1-ick" secondAttribute="bottom" constant="5" id="ZZP-Ez-OKZ"/>
+                        <constraint firstItem="QXC-Tf-Av6" firstAttribute="leading" secondItem="QrV-9L-lqd" secondAttribute="leading" constant="10" id="klJ-AC-arl"/>
+                        <constraint firstItem="fWv-HI-1Li" firstAttribute="top" secondItem="PN3-Ua-OxN" secondAttribute="bottom" constant="5" id="o3T-vA-pBf"/>
+                        <constraint firstItem="fWv-HI-1Li" firstAttribute="top" secondItem="QXC-Tf-Av6" secondAttribute="bottom" constant="5" id="u5M-lG-mdA"/>
+                        <constraint firstAttribute="trailing" secondItem="PN3-Ua-OxN" secondAttribute="trailing" constant="10" id="wtl-dY-sN6"/>
+                        <constraint firstItem="fWv-HI-1Li" firstAttribute="leading" secondItem="QrV-9L-lqd" secondAttribute="leading" constant="10" id="xk9-92-kaH"/>
+                        <constraint firstAttribute="trailing" secondItem="ooE-w1-ick" secondAttribute="trailing" constant="10" id="yUU-Js-1dg"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Enk-ik-iuQ"/>
                         </mask>
                     </variation>
                 </view>

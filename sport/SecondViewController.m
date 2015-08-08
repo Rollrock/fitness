@@ -16,10 +16,11 @@
 #import "FirstTableViewCell.h"
 #import "JSONKit.h"
 #import "WebViewController.h"
+#import "BaiduMobAdView.h"
 
 @import GoogleMobileAds;
 
-@interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate,BaiduMobAdViewDelegate>
 {
     GADBannerView * _bannerView;
     
@@ -221,6 +222,7 @@
    
     //
     
+    /*
     CGRect rect = [[UIScreen mainScreen]bounds];
     CGPoint pt ;
     
@@ -235,6 +237,33 @@
     //_bannerView.backgroundColor = [UIColor lightGrayColor];
     
     [self.view addSubview:_bannerView];
+     */
+    
+    CGRect rect = [[UIScreen mainScreen]bounds];
+    CGPoint pt = CGPointMake(0, rect.origin.y+rect.size.height-kBaiduAdViewBanner468x60.height-1-[self.navigationController navigationBar].frame.size.height);
+    
+    BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
+    _baiduView.AdType = BaiduMobAdViewTypeBanner;
+    _baiduView.frame = CGRectMake(0, pt.y, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
+    
+    _baiduView.delegate = self;
+    [self.view addSubview:_baiduView];
+    [_baiduView start];
 }
+
+
+- (NSString *)publisherId
+{
+    return @"bf498248";
+}
+
+/**
+ *  应用在union.baidu.com上的APPID
+ */
+- (NSString*) appSpec
+{
+    return @"bf498248";
+}
+
 
 @end

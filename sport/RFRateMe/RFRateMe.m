@@ -10,7 +10,7 @@
 #import "UIAlertView+NSCookbook.h"
 
 #define kNumberOfDaysUntilShowAgain 3
-#define kAppStoreAddress @"https://itunes.apple.com/us/app/30tian-jian-fei-bu-fan-dan/id1024533470?l=zh&ls=1&mt=8"
+#define kAppStoreAddress @"https://itunes.apple.com/us/app/21tian-jian-fei-bu-fan-dan/id1024533470?l=zh&ls=1&mt=8"
 #define kAppName @"'21天减肥不反弹'"
 
 @implementation RFRateMe
@@ -24,7 +24,7 @@
     [data setCalendar:cal];
     [data setYear:2015];
     [data setMonth:8];
-    [data setDay:10];
+    [data setDay:29];
     
     NSDate * farDate = [cal dateFromComponents:data];
     

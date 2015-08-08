@@ -62,6 +62,7 @@
     timeLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
     timeLab.center = CGPointMake(self.view.center.x, rightBtn.frame.origin.y + 50);
     timeLab.text = @"60";
+    timeLab.textAlignment = NSTextAlignmentCenter;
     timeLab.font = [UIFont systemFontOfSize:55];
     timeLab.textColor = [UIColor brownColor];
     [self.view addSubview:timeLab];

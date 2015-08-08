@@ -57,6 +57,28 @@
 		483DADD61B69ACDF000D9B8D /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 483DADD31B69ACDF000D9B8D /* rightArrow.png */; };
 		483DADD71B69ACDF000D9B8D /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 483DADD41B69ACDF000D9B8D /* leftArrow.png */; };
 		483DADD81B69ACDF000D9B8D /* backArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 483DADD51B69ACDF000D9B8D /* backArrow.png */; };
+		484C0F161B7598BC003BE463 /* PayMent.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F141B7598BC003BE463 /* PayMent.m */; };
+		484C0F9A1B759D98003BE463 /* baidumobadsdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 484C0F691B759D98003BE463 /* baidumobadsdk.bundle */; };
+		484C0F9B1B759D98003BE463 /* libBaiduMobAdSdk64bit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 484C0F6D1B759D98003BE463 /* libBaiduMobAdSdk64bit.a */; };
+		484C0F9C1B759D98003BE463 /* mongoose.c in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F6F1B759D98003BE463 /* mongoose.c */; };
+		484C0F9D1B759D98003BE463 /* OpenUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F731B759D98003BE463 /* OpenUDID.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		484C0F9E1B759D98003BE463 /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F761B759D98003BE463 /* CDataScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		484C0F9F1B759D98003BE463 /* CFilteringJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F791B759D98003BE463 /* CFilteringJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		484C0FA01B759D98003BE463 /* CJSONDeserializer_BlocksExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F7B1B759D98003BE463 /* CJSONDeserializer_BlocksExtensions.m */; };
+		484C0FA11B759D98003BE463 /* CJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F7D1B759D98003BE463 /* CJSONSerialization.m */; };
+		484C0FA21B759D98003BE463 /* CJSONSerializedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F7F1B759D98003BE463 /* CJSONSerializedData.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		484C0FA31B759D98003BE463 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F821B759D98003BE463 /* CDataScanner_Extensions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		484C0FA41B759D98003BE463 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F841B759D98003BE463 /* NSDictionary_JSONExtensions.m */; };
+		484C0FA51B759D98003BE463 /* CJSONDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F871B759D98003BE463 /* CJSONDeserializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		484C0FA61B759D98003BE463 /* CJSONScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F891B759D98003BE463 /* CJSONScanner.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		484C0FA71B759D98003BE463 /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F8B1B759D98003BE463 /* CJSONSerializer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		484C0FA81B759D98003BE463 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F901B759D98003BE463 /* ioapi.c */; };
+		484C0FA91B759D98003BE463 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F921B759D98003BE463 /* mztools.c */; };
+		484C0FAA1B759D98003BE463 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F941B759D98003BE463 /* unzip.c */; };
+		484C0FAB1B759D98003BE463 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F961B759D98003BE463 /* zip.c */; };
+		484C0FAC1B759D98003BE463 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 484C0F991B759D98003BE463 /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		484C0FB01B75A867003BE463 /* gushi_3.html in Resources */ = {isa = PBXBuildFile; fileRef = 484C0FAE1B75A867003BE463 /* gushi_3.html */; };
+		484C0FB11B75A867003BE463 /* gushi_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 484C0FAF1B75A867003BE463 /* gushi_3.png */; };
 		485762D01B69D20B00758A3A /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 485762CF1B69D20B00758A3A /* UIImage+animatedGIF.m */; };
 		485764421B6B754A00758A3A /* 1.html in Resources */ = {isa = PBXBuildFile; fileRef = 485763CF1B6B754A00758A3A /* 1.html */; };
 		485764431B6B754A00758A3A /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 485763D01B6B754A00758A3A /* 1.jpg */; };
@@ -325,6 +347,57 @@
 		483DADD31B69ACDF000D9B8D /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
 		483DADD41B69ACDF000D9B8D /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
 		483DADD51B69ACDF000D9B8D /* backArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrow.png; sourceTree = "<group>"; };
+		484C0F141B7598BC003BE463 /* PayMent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayMent.m; sourceTree = "<group>"; };
+		484C0F151B7598BC003BE463 /* PayMent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayMent.h; sourceTree = "<group>"; };
+		484C0F631B759D98003BE463 /* BaiduMobAdCommonConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdCommonConfig.h; sourceTree = "<group>"; };
+		484C0F641B759D98003BE463 /* BaiduMobAdDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdDelegateProtocol.h; sourceTree = "<group>"; };
+		484C0F651B759D98003BE463 /* BaiduMobAdInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdInterstitial.h; sourceTree = "<group>"; };
+		484C0F661B759D98003BE463 /* BaiduMobAdInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdInterstitialDelegate.h; sourceTree = "<group>"; };
+		484C0F671B759D98003BE463 /* BaiduMobAdRecommendDelegateProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdRecommendDelegateProtocol.h; sourceTree = "<group>"; };
+		484C0F681B759D98003BE463 /* BaiduMobAdRecommendIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdRecommendIcon.h; sourceTree = "<group>"; };
+		484C0F691B759D98003BE463 /* baidumobadsdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = baidumobadsdk.bundle; sourceTree = "<group>"; };
+		484C0F6A1B759D98003BE463 /* BaiduMobAdSplash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdSplash.h; sourceTree = "<group>"; };
+		484C0F6B1B759D98003BE463 /* BaiduMobAdSplashDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdSplashDelegate.h; sourceTree = "<group>"; };
+		484C0F6C1B759D98003BE463 /* BaiduMobAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobAdView.h; sourceTree = "<group>"; };
+		484C0F6D1B759D98003BE463 /* libBaiduMobAdSdk64bit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobAdSdk64bit.a; sourceTree = "<group>"; };
+		484C0F6F1B759D98003BE463 /* mongoose.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mongoose.c; sourceTree = "<group>"; };
+		484C0F701B759D98003BE463 /* mongoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mongoose.h; sourceTree = "<group>"; };
+		484C0F721B759D98003BE463 /* OpenUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenUDID.h; sourceTree = "<group>"; };
+		484C0F731B759D98003BE463 /* OpenUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenUDID.m; sourceTree = "<group>"; };
+		484C0F751B759D98003BE463 /* CDataScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner.h; sourceTree = "<group>"; };
+		484C0F761B759D98003BE463 /* CDataScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner.m; sourceTree = "<group>"; };
+		484C0F781B759D98003BE463 /* CFilteringJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFilteringJSONSerializer.h; sourceTree = "<group>"; };
+		484C0F791B759D98003BE463 /* CFilteringJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFilteringJSONSerializer.m; sourceTree = "<group>"; };
+		484C0F7A1B759D98003BE463 /* CJSONDeserializer_BlocksExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer_BlocksExtensions.h; sourceTree = "<group>"; };
+		484C0F7B1B759D98003BE463 /* CJSONDeserializer_BlocksExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer_BlocksExtensions.m; sourceTree = "<group>"; };
+		484C0F7C1B759D98003BE463 /* CJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerialization.h; sourceTree = "<group>"; };
+		484C0F7D1B759D98003BE463 /* CJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerialization.m; sourceTree = "<group>"; };
+		484C0F7E1B759D98003BE463 /* CJSONSerializedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializedData.h; sourceTree = "<group>"; };
+		484C0F7F1B759D98003BE463 /* CJSONSerializedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializedData.m; sourceTree = "<group>"; };
+		484C0F811B759D98003BE463 /* CDataScanner_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDataScanner_Extensions.h; sourceTree = "<group>"; };
+		484C0F821B759D98003BE463 /* CDataScanner_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDataScanner_Extensions.m; sourceTree = "<group>"; };
+		484C0F831B759D98003BE463 /* NSDictionary_JSONExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDictionary_JSONExtensions.h; sourceTree = "<group>"; };
+		484C0F841B759D98003BE463 /* NSDictionary_JSONExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionary_JSONExtensions.m; sourceTree = "<group>"; };
+		484C0F861B759D98003BE463 /* CJSONDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONDeserializer.h; sourceTree = "<group>"; };
+		484C0F871B759D98003BE463 /* CJSONDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONDeserializer.m; sourceTree = "<group>"; };
+		484C0F881B759D98003BE463 /* CJSONScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONScanner.h; sourceTree = "<group>"; };
+		484C0F891B759D98003BE463 /* CJSONScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONScanner.m; sourceTree = "<group>"; };
+		484C0F8A1B759D98003BE463 /* CJSONSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
+		484C0F8B1B759D98003BE463 /* CJSONSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
+		484C0F8C1B759D98003BE463 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		484C0F8F1B759D98003BE463 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		484C0F901B759D98003BE463 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		484C0F911B759D98003BE463 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		484C0F921B759D98003BE463 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		484C0F931B759D98003BE463 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		484C0F941B759D98003BE463 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		484C0F951B759D98003BE463 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		484C0F961B759D98003BE463 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		484C0F971B759D98003BE463 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		484C0F981B759D98003BE463 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		484C0F991B759D98003BE463 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
+		484C0FAE1B75A867003BE463 /* gushi_3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = gushi_3.html; sourceTree = "<group>"; };
+		484C0FAF1B75A867003BE463 /* gushi_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gushi_3.png; sourceTree = "<group>"; };
 		485762CE1B69D20B00758A3A /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		485762CF1B69D20B00758A3A /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
 		485763CF1B6B754A00758A3A /* 1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = 1.html; sourceTree = "<group>"; };
@@ -508,6 +581,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				484C0F9B1B759D98003BE463 /* libBaiduMobAdSdk64bit.a in Frameworks */,
 				483DAD911B68AC12000D9B8D /* GoogleMobileAds.framework in Frameworks */,
 				48F2C7C31B340355001D4153 /* GameController.framework in Frameworks */,
 				48F2C7C11B34034D001D4153 /* libz.dylib in Frameworks */,
@@ -581,6 +655,9 @@
 		481F65631B2F057300409C15 /* sport */ = {
 			isa = PBXGroup;
 			children = (
+				484C0F621B759D98003BE463 /* BaiDuAdv */,
+				484C0F141B7598BC003BE463 /* PayMent.m */,
+				484C0F151B7598BC003BE463 /* PayMent.h */,
 				485764B41B6F61F700758A3A /* WeChatSDK */,
 				485762CD1B69D20B00758A3A /* UIImage+animatedGIF */,
 				483DAD981B68AC9B000D9B8D /* UMAnalytics_Sdk_3.5.10 */,
@@ -781,6 +858,133 @@
 			path = UMAnalytics_Sdk_3.5.10;
 			sourceTree = "<group>";
 		};
+		484C0F621B759D98003BE463 /* BaiDuAdv */ = {
+			isa = PBXGroup;
+			children = (
+				484C0F631B759D98003BE463 /* BaiduMobAdCommonConfig.h */,
+				484C0F641B759D98003BE463 /* BaiduMobAdDelegateProtocol.h */,
+				484C0F651B759D98003BE463 /* BaiduMobAdInterstitial.h */,
+				484C0F661B759D98003BE463 /* BaiduMobAdInterstitialDelegate.h */,
+				484C0F671B759D98003BE463 /* BaiduMobAdRecommendDelegateProtocol.h */,
+				484C0F681B759D98003BE463 /* BaiduMobAdRecommendIcon.h */,
+				484C0F691B759D98003BE463 /* baidumobadsdk.bundle */,
+				484C0F6A1B759D98003BE463 /* BaiduMobAdSplash.h */,
+				484C0F6B1B759D98003BE463 /* BaiduMobAdSplashDelegate.h */,
+				484C0F6C1B759D98003BE463 /* BaiduMobAdView.h */,
+				484C0F6D1B759D98003BE463 /* libBaiduMobAdSdk64bit.a */,
+				484C0F6E1B759D98003BE463 /* Mongoose */,
+				484C0F711B759D98003BE463 /* OpenUDID */,
+				484C0F741B759D98003BE463 /* TouchJSON */,
+				484C0F8D1B759D98003BE463 /* ZipArchive */,
+			);
+			path = BaiDuAdv;
+			sourceTree = "<group>";
+		};
+		484C0F6E1B759D98003BE463 /* Mongoose */ = {
+			isa = PBXGroup;
+			children = (
+				484C0F6F1B759D98003BE463 /* mongoose.c */,
+				484C0F701B759D98003BE463 /* mongoose.h */,
+			);
+			path = Mongoose;
+			sourceTree = "<group>";
+		};
+		484C0F711B759D98003BE463 /* OpenUDID */ = {
+			isa = PBXGroup;
+			children = (
+				484C0F721B759D98003BE463 /* OpenUDID.h */,
+				484C0F731B759D98003BE463 /* OpenUDID.m */,
+			);
+			path = OpenUDID;
+			sourceTree = "<group>";
+		};
+		484C0F741B759D98003BE463 /* TouchJSON */ = {
+			isa = PBXGroup;
+			children = (
+				484C0F751B759D98003BE463 /* CDataScanner.h */,
+				484C0F761B759D98003BE463 /* CDataScanner.m */,
+				484C0F771B759D98003BE463 /* Experimental */,
+				484C0F801B759D98003BE463 /* Extensions */,
+				484C0F851B759D98003BE463 /* JSON */,
+			);
+			path = TouchJSON;
+			sourceTree = "<group>";
+		};
+		484C0F771B759D98003BE463 /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				484C0F781B759D98003BE463 /* CFilteringJSONSerializer.h */,
+				484C0F791B759D98003BE463 /* CFilteringJSONSerializer.m */,
+				484C0F7A1B759D98003BE463 /* CJSONDeserializer_BlocksExtensions.h */,
+				484C0F7B1B759D98003BE463 /* CJSONDeserializer_BlocksExtensions.m */,
+				484C0F7C1B759D98003BE463 /* CJSONSerialization.h */,
+				484C0F7D1B759D98003BE463 /* CJSONSerialization.m */,
+				484C0F7E1B759D98003BE463 /* CJSONSerializedData.h */,
+				484C0F7F1B759D98003BE463 /* CJSONSerializedData.m */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		484C0F801B759D98003BE463 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				484C0F811B759D98003BE463 /* CDataScanner_Extensions.h */,
+				484C0F821B759D98003BE463 /* CDataScanner_Extensions.m */,
+				484C0F831B759D98003BE463 /* NSDictionary_JSONExtensions.h */,
+				484C0F841B759D98003BE463 /* NSDictionary_JSONExtensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		484C0F851B759D98003BE463 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				484C0F861B759D98003BE463 /* CJSONDeserializer.h */,
+				484C0F871B759D98003BE463 /* CJSONDeserializer.m */,
+				484C0F881B759D98003BE463 /* CJSONScanner.h */,
+				484C0F891B759D98003BE463 /* CJSONScanner.m */,
+				484C0F8A1B759D98003BE463 /* CJSONSerializer.h */,
+				484C0F8B1B759D98003BE463 /* CJSONSerializer.m */,
+				484C0F8C1B759D98003BE463 /* JSONRepresentation.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		484C0F8D1B759D98003BE463 /* ZipArchive */ = {
+			isa = PBXGroup;
+			children = (
+				484C0F8E1B759D98003BE463 /* minizip */,
+				484C0F981B759D98003BE463 /* ZipArchive.h */,
+				484C0F991B759D98003BE463 /* ZipArchive.mm */,
+			);
+			path = ZipArchive;
+			sourceTree = "<group>";
+		};
+		484C0F8E1B759D98003BE463 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				484C0F8F1B759D98003BE463 /* crypt.h */,
+				484C0F901B759D98003BE463 /* ioapi.c */,
+				484C0F911B759D98003BE463 /* ioapi.h */,
+				484C0F921B759D98003BE463 /* mztools.c */,
+				484C0F931B759D98003BE463 /* mztools.h */,
+				484C0F941B759D98003BE463 /* unzip.c */,
+				484C0F951B759D98003BE463 /* unzip.h */,
+				484C0F961B759D98003BE463 /* zip.c */,
+				484C0F971B759D98003BE463 /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		484C0FAD1B75A867003BE463 /* gushi_3 */ = {
+			isa = PBXGroup;
+			children = (
+				484C0FAE1B75A867003BE463 /* gushi_3.html */,
+				484C0FAF1B75A867003BE463 /* gushi_3.png */,
+			);
+			path = gushi_3;
+			sourceTree = "<group>";
+		};
 		485762CD1B69D20B00758A3A /* UIImage+animatedGIF */ = {
 			isa = PBXGroup;
 			children = (
@@ -793,6 +997,7 @@
 		485763CD1B6B754A00758A3A /* fitness */ = {
 			isa = PBXGroup;
 			children = (
+				484C0FAD1B75A867003BE463 /* gushi_3 */,
 				485763CE1B6B754A00758A3A /* 1 */,
 				485763D41B6B754A00758A3A /* 2 */,
 				485763DA1B6B754A00758A3A /* 3 */,
@@ -1305,6 +1510,7 @@
 				4857644F1B6B754A00758A3A /* 4.jpg in Resources */,
 				4864EAD71B64975600F7E977 /* pg_4_6.png in Resources */,
 				4857644C1B6B754A00758A3A /* 3.html in Resources */,
+				484C0FB11B75A867003BE463 /* gushi_3.png in Resources */,
 				48B268821B6375CF004226C7 /* 人间仙境.cff in Resources */,
 				4857645B1B6B754A00758A3A /* 6p_1.png in Resources */,
 				4864EACD1B64975600F7E977 /* pg_4_4.png in Resources */,
@@ -1369,6 +1575,7 @@
 				48B2689C1B6375CF004226C7 /* 超级玛丽.cff in Resources */,
 				4857648D1B6B754A00758A3A /* g_5_5.gif in Resources */,
 				48B2688D1B6375CF004226C7 /* 混合金属.cff in Resources */,
+				484C0F9A1B759D98003BE463 /* baidumobadsdk.bundle in Resources */,
 				485764AF1B6F3BAB00758A3A /* 58.png in Resources */,
 				4857649F1B6B754A00758A3A /* shiwu_5.html in Resources */,
 				4857648C1B6B754A00758A3A /* g_5_4.gif in Resources */,
@@ -1410,6 +1617,7 @@
 				4864EAD01B64975600F7E977 /* pg_2_5.png in Resources */,
 				485764881B6B754A00758A3A /* g_5.txt in Resources */,
 				4857647E1B6B754A00758A3A /* g_3_8.gif in Resources */,
+				484C0FB01B75A867003BE463 /* gushi_3.html in Resources */,
 				4857645E1B6B754A00758A3A /* 7.jpg in Resources */,
 				485764941B6B754A00758A3A /* gushi_2.jpg in Resources */,
 				485764771B6B754A00758A3A /* g_3_1.gif in Resources */,
@@ -1464,17 +1672,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				481F656D1B2F057300409C15 /* ViewController.m in Sources */,
+				484C0FA51B759D98003BE463 /* CJSONDeserializer.m in Sources */,
+				484C0FA61B759D98003BE463 /* CJSONScanner.m in Sources */,
 				483DAD871B68AC12000D9B8D /* SVIndefiniteAnimatedView.m in Sources */,
 				483DADD21B690097000D9B8D /* PlayViewController.m in Sources */,
 				481F65941B2F08A600409C15 /* RockTabView.m in Sources */,
+				484C0F9D1B759D98003BE463 /* OpenUDID.m in Sources */,
+				484C0FA21B759D98003BE463 /* CJSONSerializedData.m in Sources */,
 				483DADBA1B68CB29000D9B8D /* GifViewController.m in Sources */,
+				484C0FA11B759D98003BE463 /* CJSONSerialization.m in Sources */,
+				484C0FAB1B759D98003BE463 /* zip.c in Sources */,
 				483DAD891B68AC12000D9B8D /* SVProgressHUD.m in Sources */,
 				483DAD8F1B68AC12000D9B8D /* NSString+Base64.m in Sources */,
 				483DAD8C1B68AC12000D9B8D /* JSONKit.m in Sources */,
+				484C0FAC1B759D98003BE463 /* ZipArchive.mm in Sources */,
+				484C0F9F1B759D98003BE463 /* CFilteringJSONSerializer.m in Sources */,
 				481F65AC1B2F189500409C15 /* ThirdViewController.m in Sources */,
 				483DAD8E1B68AC12000D9B8D /* IAPShare.m in Sources */,
+				484C0FA01B759D98003BE463 /* CJSONDeserializer_BlocksExtensions.m in Sources */,
 				481F656A1B2F057300409C15 /* AppDelegate.m in Sources */,
 				481F65A71B2F13ED00409C15 /* SecondViewController.m in Sources */,
+				484C0F161B7598BC003BE463 /* PayMent.m in Sources */,
+				484C0F9E1B759D98003BE463 /* CDataScanner.m in Sources */,
+				484C0FA31B759D98003BE463 /* CDataScanner_Extensions.m in Sources */,
 				483DAD8B1B68AC12000D9B8D /* UIAlertView+NSCookbook.m in Sources */,
 				481F65901B2F088000409C15 /* FirstViewController.m in Sources */,
 				481F65B51B2F1E0600409C15 /* StructInfo.m in Sources */,
@@ -1483,11 +1703,17 @@
 				48EEE0141B2FED6700D78ED4 /* SelectView.m in Sources */,
 				483DAD8A1B68AC12000D9B8D /* RFRateMe.m in Sources */,
 				483DAD971B68AC82000D9B8D /* WelcomeViewController.m in Sources */,
+				484C0FA41B759D98003BE463 /* NSDictionary_JSONExtensions.m in Sources */,
 				483DAD901B68AC12000D9B8D /* SFHFKeychainUtils.m in Sources */,
 				485762D01B69D20B00758A3A /* UIImage+animatedGIF.m in Sources */,
 				483DADB51B68C8E1000D9B8D /* WebViewController.m in Sources */,
+				484C0FA81B759D98003BE463 /* ioapi.c in Sources */,
 				481F658C1B2F064D00409C15 /* MainViewController.m in Sources */,
+				484C0FAA1B759D98003BE463 /* unzip.c in Sources */,
 				483DAD8D1B68AC12000D9B8D /* IAPHelper.m in Sources */,
+				484C0FA71B759D98003BE463 /* CJSONSerializer.m in Sources */,
+				484C0F9C1B759D98003BE463 /* mongoose.c in Sources */,
+				484C0FA91B759D98003BE463 /* mztools.c in Sources */,
 				481F65B11B2F1A8B00409C15 /* FirstTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1552,6 +1778,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
@@ -1596,6 +1823,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1622,6 +1850,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sport/GoogleMobileAdsSdkiOS-7.3.1",
 				);
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = sport/Info.plist;
@@ -1631,6 +1860,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sport/UMAnalytics_Sdk_3.5.10",
 					"$(PROJECT_DIR)/sport/WeChatSDK",
+					"$(PROJECT_DIR)/sport/BaiDuAdv",
 				);
 				PRODUCT_NAME = sport;
 				PROVISIONING_PROFILE = "";
@@ -1648,6 +1878,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sport/GoogleMobileAdsSdkiOS-7.3.1",
 				);
+				GCC_INPUT_FILETYPE = sourcecode.c.objc;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PrefixHeader.pch";
 				INFOPLIST_FILE = sport/Info.plist;
@@ -1657,6 +1888,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/sport/UMAnalytics_Sdk_3.5.10",
 					"$(PROJECT_DIR)/sport/WeChatSDK",
+					"$(PROJECT_DIR)/sport/BaiDuAdv",
 				);
 				PRODUCT_NAME = sport;
 				PROVISIONING_PROFILE = "";
