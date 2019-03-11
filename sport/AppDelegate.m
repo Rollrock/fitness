@@ -10,14 +10,12 @@
 #import "MainViewController.h"
 #import "StructInfo.h"
 #import "SVProgressHUD.h"
-#import "WXApi.h"
 
 #import "RFRateMe.h"
-#import "MobClick.h"
-#import "WelcomeViewController.h"
 
+@import GoogleMobileAds;
 
-@interface AppDelegate ()<WelcomeDelegate>
+@interface AppDelegate ()
 {
     MainViewController * mainVC;
 }
@@ -38,24 +36,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+     [GADMobileAds configureWithApplicationID:@"ca-app-pub-3058205099381432~1258942633"];
+    
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     [self.window makeKeyAndVisible];
     
-    //
-    //WelcomeViewController * vc = [[WelcomeViewController alloc]initWithNibName:nil bundle:nil];
-    
-    //if( vc.bShowed )
-    {
-        [self doInitThings:launchOptions];
-    }
-    //else
-    {
-      //  vc.welcomeDelegate = self;
-        
-      //  self.window.rootViewController = vc;
-    }
-    
+    [self doInitThings:launchOptions];
     
     return YES;
 }
@@ -73,13 +60,6 @@
     
     self.window.rootViewController = mainVC;
  
-    //    
-    [MobClick startWithAppkey:@"55bf297d67e58e0fec000289" reportPolicy:BATCH   channelId:@""];
-    
-    //
-    
-    [WXApi registerApp:@"wx56599a0020b5efcd"];
-    
     [RFRateMe showRateAlertAfterTimesOpened:3];
 
     //
@@ -111,121 +91,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
--(BOOL)application:(UIApplication*)application handleOpenURL:(NSURL *)url
-{
-    return [WXApi handleOpenURL:url delegate:self];
-}
-
--(BOOL)application:(UIApplication*)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    return [WXApi handleOpenURL:url delegate:self];
-}
-
-
--(void) onReq:(BaseReq*)req
-{
-    if([req isKindOfClass:[ShowMessageFromWXReq class]])
-    {
-        ShowMessageFromWXReq* temp = (ShowMessageFromWXReq*)req;
-        WXMediaMessage *msg = temp.message;
-        
-        //显示微信传过来的内容
-        WXAppExtendObject *obj = msg.mediaObject;
-        
-        //NSString *strMsg = [NSString stringWithFormat:@"标题：%@ \n内容：%@ \n附带信息：%@ \n缩略图:%u bytes\n\n", msg.title, msg.description, obj.extInfo, msg.thumbData.length];
-        
-        // NSLog(@"strMsg:%@",strMsg);
-        
-    }
-}
-
--(void) onResp:(BaseResp*)resp
-{
-    if([resp isKindOfClass:[SendMessageToWXResp class]])
-    {
-        NSString *strMsg = [NSString stringWithFormat:@"errcode:%d", resp.errCode];
-        
-        NSLog(@"strMsg:%@",strMsg);
-        
-        
-        if( resp.errCode == 0 )
-        {
-            //发送成功
-            
-            NSUserDefaults * def = [NSUserDefaults standardUserDefaults];
-            //[def setObject:[NSDate dateWithTimeIntervalSinceNow:(60*60*24*7)] forKey:ADV_BUYED];
-            [def synchronize];
-            
-            
-            [SVProgressHUD showSuccessWithStatus:@"分享成功，广告将在下次打开软件的时候消除~~"];
-            
-        }
-        else if( resp.errCode == -2 )
-        {
-            //主动取消
-        }
-    }
-}
-
--(BOOL)isWeChatValid
-{
-    if( [WXApi isWXAppInstalled] && [WXApi isWXAppSupportApi] )
-    {
-        return  YES;
-    }
-    
-    return NO;
-}
-
--(void) shareWithTextUrl
-{
-    if( ![self isWeChatValid ] )
-    {
-        UIAlertView * alterView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"您的手机没有安装微信，无法使用此功能~" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alterView show];
-        
-        return;
-    }
-    
-    WXMediaMessage *message = [WXMediaMessage message];
-    message.title = @"21天快速减肥，不节食不吃药，真的瘦下来了~~~";
-    [message setThumbImage:[UIImage imageNamed:@"res2.png"]];
-    
-    WXWebpageObject *ext = [WXWebpageObject object];
-    ext.webpageUrl = @"https://itunes.apple.com/us/app/21tian-jian-fei-bu-fan-dan/id1024533470?l=zh&ls=1&mt=8";
-    
-    message.mediaObject = ext;
-    
-    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-    req.bText = NO;
-    req.message = message;
-    req.scene = WXSceneTimeline;
-    
-    [WXApi sendReq:req];
-}
-
-- (void)shareWithImage
-{
-    WXMediaMessage *message = [WXMediaMessage message];
-    [message setThumbImage:[UIImage imageNamed:@"weixin_share"]];
-    
-    WXImageObject *ext = [WXImageObject object];
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"weixin_share" ofType:@"png"];
-    NSLog(@"filepath :%@",filePath);
-    ext.imageData = [NSData dataWithContentsOfFile:filePath];
-    
-    UIImage* image = [UIImage imageWithData:ext.imageData];
-    ext.imageData = UIImagePNGRepresentation(image);
-    
-    message.mediaObject = ext;
-    
-    SendMessageToWXReq* req = [[SendMessageToWXReq alloc] init];
-    req.bText = NO;
-    req.message = message;
-    req.scene = WXSceneTimeline;
-    
-    [WXApi sendReq:req];
-}
 
 
 -(BOOL)showAdv

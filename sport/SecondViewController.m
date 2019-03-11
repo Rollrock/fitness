@@ -16,11 +16,10 @@
 #import "FirstTableViewCell.h"
 #import "JSONKit.h"
 #import "WebViewController.h"
-#import "BaiduMobAdView.h"
 
 @import GoogleMobileAds;
 
-@interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate,BaiduMobAdViewDelegate>
+@interface SecondViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     GADBannerView * _bannerView;
     
@@ -220,49 +219,7 @@
     AppDelegate * appDel;
     appDel = [[UIApplication sharedApplication] delegate];
    
-    //
-    
-    /*
-    CGRect rect = [[UIScreen mainScreen]bounds];
-    CGPoint pt ;
-    
-    pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeSmartBannerPortrait.size.height-5-TAB_HEIGHT - [self.navigationController navigationBar].frame.size.height);
-    _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait origin:pt];
-    
-    
-    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/7586204749";//调用你的id
-    _bannerView.rootViewController = self;
-    [_bannerView loadRequest:[GADRequest request]];
-    
-    //_bannerView.backgroundColor = [UIColor lightGrayColor];
-    
-    [self.view addSubview:_bannerView];
-     */
-    
-    CGRect rect = [[UIScreen mainScreen]bounds];
-    CGPoint pt = CGPointMake(0, rect.origin.y+rect.size.height-kBaiduAdViewBanner468x60.height-1-[self.navigationController navigationBar].frame.size.height);
-    
-    BaiduMobAdView * _baiduView = [[BaiduMobAdView alloc]init];
-    _baiduView.AdType = BaiduMobAdViewTypeBanner;
-    _baiduView.frame = CGRectMake(0, pt.y, kBaiduAdViewBanner468x60.width, kBaiduAdViewBanner468x60.height);
-    
-    _baiduView.delegate = self;
-    [self.view addSubview:_baiduView];
-    [_baiduView start];
-}
-
-
-- (NSString *)publisherId
-{
-    return @"bf498248";
-}
-
-/**
- *  应用在union.baidu.com上的APPID
- */
-- (NSString*) appSpec
-{
-    return @"bf498248";
+   
 }
 
 

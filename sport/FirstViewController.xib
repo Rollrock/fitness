@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController">
@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="msM-fl-Ye2">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="510"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="uUd-oX-G4T"/>
@@ -30,7 +30,7 @@
                 <constraint firstItem="msM-fl-Ye2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DDz-17-DMl"/>
                 <constraint firstAttribute="trailing" secondItem="msM-fl-Ye2" secondAttribute="trailing" id="FTE-Um-OM6"/>
                 <constraint firstItem="msM-fl-Ye2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mAM-ZO-Z2c"/>
-                <constraint firstAttribute="bottom" secondItem="msM-fl-Ye2" secondAttribute="bottom" constant="50" id="t0E-Zd-gmk"/>
+                <constraint firstAttribute="bottom" secondItem="msM-fl-Ye2" secondAttribute="bottom" constant="90" id="t0E-Zd-gmk"/>
             </constraints>
             <point key="canvasLocation" x="269" y="309"/>
         </view>

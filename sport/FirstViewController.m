@@ -9,12 +9,12 @@
 #import "FirstViewController.h"
 #import "FirstTableViewCell.h"
 #import "StructInfo.h"
-#import "AppDelegate.h"
 #import "RFRateMe.h"
 #import "JSONKit.h"
 #import "WebViewController.h"
 #import "GifViewController.h"
 #import "PayMent.h"
+
 
 @import GoogleMobileAds;
 
@@ -25,13 +25,12 @@
 {
     NSMutableArray * dataArray;
     
-    AppDelegate * appDel;
-    
     GADBannerView * _bannerView;
     
     PayMent * payMent;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tabView;
+@property(nonatomic, strong) GADInterstitial *interstitial;
 
 @end
 
@@ -80,9 +79,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-    appDel = [[UIApplication sharedApplication] delegate];
-    
+
     //
     [self laytouADVView];
     //
@@ -94,13 +91,19 @@
     //
     payMent = [PayMent new];
     payMent.PayDelegate = self;
-
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        if (self.interstitial.isReady)
+        {
+            [self.interstitial presentFromRootViewController:self];
+        }
+    });
 }
-
 
 -(void)initData
 {
-    
     dataArray = [NSMutableArray new];
     
     NSString * txtPath = [[NSBundle mainBundle] pathForResource:@"newslist" ofType:@"txt"];
@@ -129,20 +132,13 @@
 -(void)laytouADVView
 {
     //
+    self.interstitial = [[GADInterstitial alloc]
+                         initWithAdUnitID:@"ca-app-pub-3058205099381432/7787201275"];
     
-    CGRect rect = [[UIScreen mainScreen]bounds];
-    CGPoint pt ;
-    
-    pt = CGPointMake(0, rect.origin.y+rect.size.height-kGADAdSizeSmartBannerPortrait.size.height-5-TAB_HEIGHT - [self.navigationController navigationBar].frame.size.height);
-    _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait origin:pt];
-    
-    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/7586204749";//调用你的id
-    _bannerView.rootViewController = self;
-    [_bannerView loadRequest:[GADRequest request]];
-    
-    [self.view addSubview:_bannerView];
+    GADRequest * request = [GADRequest request];
+    request.testDevices = @[ @"02257fbde9fc053b183b97056fe93ff4" ];
+    [self.interstitial loadRequest:request];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -153,7 +149,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 70;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -200,19 +196,10 @@
         }
         else
         {
-            if( indexPath.row >= 1 )
-            {
-                UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"需要购买才能观看更多健身动画(18元)" delegate:self cancelButtonTitle:@"好的" otherButtonTitles:@"不了", nil];
-                
-                [alert show];
-            }
-            else
-            {
-                GifViewController * vc =  [[GifViewController alloc]initWithNibName:nil bundle:nil];
-                vc.strUrl = info.src;
-                [self.navigationController pushViewController:vc animated:YES];
-                
-            }
+            GifViewController * vc =  [[GifViewController alloc]initWithNibName:nil bundle:nil];
+            vc.strUrl = info.src;
+            [self.navigationController pushViewController:vc animated:YES];
+            
         }
     }
    //

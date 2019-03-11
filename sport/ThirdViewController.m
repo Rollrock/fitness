@@ -10,8 +10,6 @@
 #import "RFRateMe.h"
 #import "CommData.h"
 #import "AppDelegate.h"
-#import "MobClick.h"
-#import "IAPShare.h"
 #import "PayMent.h"
 
 #define BUY_STORE   @"buy_store"
@@ -130,14 +128,6 @@
     }
     
     //
-    
-    //
-    if( !appDel.isWeChatValid )
-    {
-        _shareBtn.enabled = NO;
-    }
-    
-       //
     [self laytouADVView];
     
     //
@@ -154,59 +144,38 @@
 
 - (IBAction)app1Clicked
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/mi-ma-zhang-hao-guan-jia-zui/id1004542084?l=zh&ls=1&mt=8"]];
-    
-    [MobClick event:@"app1Clicked"];
 }
 
 - (IBAction)app2Clicked
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/xin-qing-ri-ji-diary-zhong/id1001374319?l=zh&ls=1&mt=8"]];
-    
-    [MobClick event:@"app2Clicked"];
 }
 
 - (IBAction)shareClicked
 {
     [appDel shareWithTextUrl];
-    
-    [MobClick event:@"shareClicked"];
 }
 
 - (IBAction)app3Clicked {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/shang-hai-lu-you-gong-e-zhi/id804556227?l=zh&ls=1&mt=8"]];
-    
-    
-    [MobClick event:@"app3Clicked"];
+   
 }
 
 - (IBAction)app4Clicked
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/app/bi-qi-nao-zhong-bu-qi-chuang/id1009624896?mt=8"]];
-    
-    [MobClick event:@"app4Clicked"];
 }
 
 - (IBAction)app5Clicked
 {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/xy-shou-ji-zhu-shou-xing-neng/id1020595864?l=zh&ls=1&mt=8"]];
-    
-    [MobClick event:@"app5Clicked"];
 }
 
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [MobClick beginLogPageView:@"setting"];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    
-    [MobClick endLogPageView:@"setting"];
 }
 
 
@@ -222,13 +191,10 @@
     _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeSmartBannerPortrait origin:pt];
     
     
-    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/7586204749";//调用你的id
+    _bannerView.adUnitID = @"ca-app-pub-3058205099381432/5200566381";//调用你的id
     _bannerView.rootViewController = self;
     _bannerView.delegate = self;
     [_bannerView loadRequest:[GADRequest request]];
-    
-    //
-    //_bannerView.backgroundColor = [UIColor blackColor];
     
     [self.view addSubview:_bannerView];
 }
@@ -272,18 +238,6 @@
     [payMent restoreBuy];
 }
 
-
-
 @end
-
-
-
-
-
-
-
-
-
-
 
 

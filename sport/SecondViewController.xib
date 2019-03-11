@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
@@ -17,8 +17,8 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="lWa-kC-hnr">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="510"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="J0k-rl-2uw"/>
                         <outlet property="delegate" destination="-1" id="g7C-QC-0JP"/>
@@ -27,12 +27,12 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="lWa-kC-hnr" secondAttribute="bottom" id="2B5-nB-zWG"/>
+                <constraint firstAttribute="bottom" secondItem="lWa-kC-hnr" secondAttribute="bottom" constant="90" id="2B5-nB-zWG"/>
                 <constraint firstItem="lWa-kC-hnr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3yb-H8-c2p"/>
                 <constraint firstAttribute="trailing" secondItem="lWa-kC-hnr" secondAttribute="trailing" id="Tg8-qq-2rN"/>
                 <constraint firstItem="lWa-kC-hnr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Y37-7N-WxI"/>
             </constraints>
-            <point key="canvasLocation" x="376" y="199"/>
+            <point key="canvasLocation" x="32" y="139"/>
         </view>
     </objects>
 </document>

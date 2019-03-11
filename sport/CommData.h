@@ -10,16 +10,13 @@
 #define alarm_CommData_h
 
 
-
-
-
 #define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
 #define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
 #define TAB_WIDTH   SCREEN_WIDTH
 #define TAB_HEIGHT  50
 #define TAB_NUM   3
 
-#define TAB_ICON_W 45
-#define TAB_ICON_H 45
+#define TAB_ICON_W 35
+#define TAB_ICON_H 35
 
 #endif
